@@ -154,13 +154,13 @@ def main():
         raise ValueError('No action specified')
 
     if args.verbose:
-        print('Using ID %d' % raw_id)
-        print('Requesting %d frame transmissions' % frame_count)
+        print(('Using ID %d' % raw_id))
+        print(('Requesting %d frame transmissions' % frame_count))
 
     with RevoltController() as controller:
         for command in args.command:
             if args.verbose:
-                print 'sending command \'%s\'' % command
+                print('sending command \'%s\'' % command)
 
             controller.send_command(raw_id, frame_count, command)
 
